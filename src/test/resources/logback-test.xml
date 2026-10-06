@@ -1,0 +1,13 @@
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- Broker 业务日志在单测中直接可见：发布、投递、确认、重试、租约回收、死信 -->
+    <logger name="com.github.lechandonga.localeventbrokerjava.broker" level="INFO"/>
+    <logger name="TEST-COVERAGE" level="INFO"/>
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
